@@ -49,29 +49,30 @@ h2 {
   height: 100vh;
   display: flex;
   flex-direction: row;
-  background-color: yellow;
 }
-.left-box {
-  background: #222;
-  color: #aaa;
-  height: 100vh;
-  flex: 1 1 50%; /* flex-grow, flex-shrink, flex-basis */
-  /* flex-basis: 50%; */
-  /* width: 50%; this works, as well */
-  box-sizing: border-box;
-  padding: 50px;
-  transition: flex 1s;
+
+.hidden-text {
+  opacity: 0;
+  transition: 1s;
 }
+
+
 .left-box:hover {
   flex: 1 1 80%;
 }
-.hidden-text {
-  display: none;
+
+.left-box:hover .hidden-text {
+  opacity: 1;
 }
-.left-box:hover > .hidden-text { display:inline; }
+
 .right-box:hover {
   flex: 1 1 80%;
 }
+
+.right-box:hover .hidden-text {
+  opacity: 1;
+}
+
 .right-box {
   background: #aaa;
   color: #222;
@@ -81,6 +82,18 @@ h2 {
   /* flex-basis: 50%; */
   /* width: 50%; this works, as well */
   box-sizing: border-box;
+  transition: flex 1s;
+}
+
+.left-box {
+  background: #222;
+  color: #aaa;
+  height: 100vh;
+  flex: 1 1 50%; /* flex-grow, flex-shrink, flex-basis */
+  /* flex-basis: 50%; */
+  /* width: 50%; this works, as well */
+  box-sizing: border-box;
+  padding: 50px;
   transition: flex 1s;
 }
 
