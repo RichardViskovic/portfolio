@@ -7,7 +7,7 @@
 html,body {
   font-family: 'Raleway', sans-serif;
   font-size: 18px;
-  color: #aaa
+  color: #aaa;
   margin: 0;
   padding: 0;
   border: 0;
@@ -68,7 +68,7 @@ h2 {
 .hidden-text {
   display: none;
 }
-.left-box:hover > .hidden-text { display:; }
+.left-box:hover > .hidden-text { display:inline; }
 .right-box:hover {
   flex: 1 1 80%;
 }
@@ -82,6 +82,7 @@ h2 {
   /* width: 50%; this works, as well */
   box-sizing: border-box;
   transition: flex 1s;
+}
 
 @media only screen and (max-width: 600px) {
   .right-box {
