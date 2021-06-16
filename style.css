@@ -6,7 +6,7 @@
 
 html,body {
   font-family: 'Raleway', sans-serif;
-  font-size: 18px;
+  font-size: 3vw;
   color: #aaa;
   margin: 0;
   padding: 0;
@@ -14,16 +14,17 @@ html,body {
 }
 .bignbold {
 	font-weight: 1000;
-  font-size: 1.5em;
+  font-size: 1.5rem;
+  color: yellow;
 }
 h1,h2 {
   font-weight: 200;
-  margin: 0.4em 0;
+  margin: 0.4rem 0;
 }
-h1 { font-size: 3.5em; }
+h1 { font-size: inherit }
 h2 {
   color: #888;
-  font-size: 2em;
+  font-size: 2rem;
 }
 
 .color-primary-0 { color: #552B72 }	/* Main Primary color */
@@ -54,6 +55,13 @@ h2 {
 .hidden-text {
   opacity: 0;
   transition: 1s;
+  transition-delay: 1s;
+}
+
+.bottom-text {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
 }
 
 
@@ -74,10 +82,11 @@ h2 {
 }
 
 .right-box {
+  position: relative;
   background: #aaa;
   color: #222;
   height: 100vh;
-  padding: 50px;
+  padding: 1.5rem;
   flex: 1 1 50%; /* flex-grow, flex-shrink, flex-basis */
   /* flex-basis: 50%; */
   /* width: 50%; this works, as well */
@@ -86,6 +95,7 @@ h2 {
 }
 
 .left-box {
+  position: relative;
   background: #222;
   color: #aaa;
   height: 100vh;
@@ -93,9 +103,75 @@ h2 {
   /* flex-basis: 50%; */
   /* width: 50%; this works, as well */
   box-sizing: border-box;
-  padding: 50px;
+  padding: 1.5rem;
   transition: flex 1s;
 }
+
+#profile-image {
+  height: 200px;
+  position: absolute;
+  top: 50%;
+  right: 1.5rem;
+  margin-top: -100px;
+}
+
+.circle {
+  width: 300px;
+  height: 300px;
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  border-radius: 50%;
+}
+
+.menu {
+  list-style-type: none;
+  padding: 0;
+  display:grid; /* use grid */
+  margin:auto; /* center the menu with all the items */
+  color: yellow;
+}
+
+.menu li {
+  --d:120px; /* distance from the center */
+  grid-area:1/1; /* all of them at the same position (they overlap) */
+  /* we rotate then translate to the edge then rotate again using the opposite rotation */
+  transform:rotate(var(--r)) translateX(var(--d)) rotate(calc(-1*var(--r)));
+}
+
+/* adjust the angle for each icon */
+.menu li:nth-child(1) { --r:  0deg} 
+.menu li:nth-child(2) { --r: 40deg} 
+.menu li:nth-child(3) { --r:-40deg}
+.menu li:nth-child(4) { --r:-80deg}
+.menu li:nth-child(5) { --r:-120deg}
+.menu li:nth-child(6) { --r:-160deg}
+.menu li:nth-child(7) { --r:-200deg}
+.menu li:nth-child(8) { --r:-240deg}
+
+
+
+.menu li a {
+  display: block;
+}
+.menu li a i {
+  width: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media only screen and (max-width: 600px) {
   .right-box {
