@@ -116,11 +116,16 @@ h2 {
 }
 
 .circle {
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
   background: rgba(0, 0, 0, 0.2);
   display: flex;
   border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  right: 1.5rem;
+  margin-top: -200px;
+  margin-right: -100px;
 }
 
 .menu {
@@ -128,27 +133,29 @@ h2 {
   padding: 0;
   display:grid; /* use grid */
   margin:auto; /* center the menu with all the items */
-  color: yellow;
+    color: yellow;s
 }
 
 .menu li {
-  --d:120px; /* distance from the center */
+  --d:200px; /* distance from the center */
   grid-area:1/1; /* all of them at the same position (they overlap) */
   /* we rotate then translate to the edge then rotate again using the opposite rotation */
   transform:rotate(var(--r)) translateX(var(--d)) rotate(calc(-1*var(--r)));
 }
 
 /* adjust the angle for each icon */
-.menu li:nth-child(1) { --r:  0deg} 
-.menu li:nth-child(2) { --r: 40deg} 
-.menu li:nth-child(3) { --r:-40deg}
-.menu li:nth-child(4) { --r:-80deg}
+.menu li:nth-child(1) { --r: -280deg;
+  animation-delay: 1s;
+} 
+.menu li:nth-child(2) { --r: -240deg;
+  animation-delay: 1.5;
+} 
+
+
+.menu li:nth-child(3) { --r:-200deg}
+.menu li:nth-child(4) { --r:-160deg}
 .menu li:nth-child(5) { --r:-120deg}
-.menu li:nth-child(6) { --r:-160deg}
-.menu li:nth-child(7) { --r:-200deg}
-.menu li:nth-child(8) { --r:-240deg}
-
-
+.menu li:nth-child(6) { --r:-80deg}
 
 .menu li a {
   display: block;
@@ -156,6 +163,7 @@ h2 {
 .menu li a i {
   width: 50px;
 }
+
 
 
 
