@@ -20,30 +20,13 @@ html,body {
 h1,h2 {
   font-weight: 200;
   margin: 0.4rem 0;
+  font-size: inherit;
 }
-h1 { font-size: inherit }
+
 h2 {
-  color: #888;
+  color: #aaa;
   font-size: 2rem;
 }
-
-.color-primary-0 { color: #552B72 }	/* Main Primary color */
-.color-primary-1 { color: #9575AB }
-.color-primary-2 { color: #734C8E }
-.color-primary-3 { color: #3A1355 }
-.color-primary-4 { color: #230339 }
-
-.color-secondary-1-0 { color: #80A035 }	/* Main Secondary color (1) */
-.color-secondary-1-1 { color: #D8F0A0 }
-.color-secondary-1-2 { color: #AAC864 }
-.color-secondary-1-3 { color: #5A7814 }
-.color-secondary-1-4 { color: #385000 }
-
-.color-secondary-2-0 { color: #AA9539 }	/* Main Secondary color (2) */
-.color-secondary-2-1 { color: #FFEFAA }
-.color-secondary-2-2 { color: #D4C16A }
-.color-secondary-2-3 { color: #806C15 }
-.color-secondary-2-4 { color: #554500 }
 
 #container {
   width: 100vw;
@@ -118,7 +101,7 @@ h2 {
 .circle {
   width: 400px;
   height: 400px;
-  background: rgba(0, 0, 0, 0.2);
+  /* background: rgba(0, 0, 0, 0.2); */
   display: flex;
   border-radius: 50%;
   position: absolute;
@@ -133,7 +116,7 @@ h2 {
   padding: 0;
   display:grid; /* use grid */
   margin:auto; /* center the menu with all the items */
-    color: yellow;s
+    color: #222;
 }
 
 .menu li {
@@ -141,6 +124,10 @@ h2 {
   grid-area:1/1; /* all of them at the same position (they overlap) */
   /* we rotate then translate to the edge then rotate again using the opposite rotation */
   transform:rotate(var(--r)) translateX(var(--d)) rotate(calc(-1*var(--r)));
+}
+.menu li:hover {
+  color: yellow;
+  transition: 1s;
 }
 
 /* adjust the angle for each icon */
